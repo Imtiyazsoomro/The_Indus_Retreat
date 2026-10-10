@@ -210,6 +210,27 @@ st.markdown("""
         margin: 1.5rem 0;
     }
 
+    /* Tab Styling - explicit high contrast */
+    button[data-baseweb="tab"] {
+        color: #4B5563 !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+        padding: 8px 16px !important;
+    }
+
+    button[data-baseweb="tab"]:hover {
+        color: #8E1616 !important;
+    }
+
+    button[data-baseweb="tab"][aria-selected="true"] {
+        color: #8E1616 !important;
+        font-weight: 700 !important;
+    }
+
+    div[data-baseweb="tab-highlight"] {
+        background-color: #8E1616 !important;
+    }
+
     /* Metric cards */
     div[data-testid="stMetric"] {
         background-color: #FFFFFF;
