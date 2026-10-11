@@ -687,7 +687,7 @@ elif navigation == "Concierge Cart & Billing":
 # MODULE 4: OUR STORY & LOCATION
 # ---------------------------------------------------------
 elif navigation == "Our Story & Location":
-    st.markdown("<h1>The Heritage & Provenance</h1>", unsafe_allow_html=True)
+    st.markdown("<h1>Our Story & Provenance</h1>", unsafe_allow_html=True)
     st.markdown(
         "<p style='color: #4B5563; font-size: 1.15rem; font-style: italic; margin-bottom: 24px;'>"
         "“Where five thousand years of civilization embrace the quiet majesty of the Indus waters.”"
@@ -695,109 +695,152 @@ elif navigation == "Our Story & Location":
         unsafe_allow_html=True
     )
 
-    # Section 1: The Vision & The Location
-    col_vision, col_loc = st.columns(2)
-    with col_vision:
+    # ---------------------------------------------------------
+    # Section 1: The Whispering Waters of the Indus
+    # Layout 1: Image on Left (indus_river.jpg), Text on Right
+    # ---------------------------------------------------------
+    col1, col2 = st.columns([1, 1], gap="large")
+    with col1:
+        img_p1 = resolve_asset_path("indus_river.jpg")
+        if img_p1 and os.path.exists(str(img_p1)):
+            st.image(str(img_p1), caption="The Whispering Waters of the Indus River", use_container_width=True)
+    with col2:
         st.markdown("""
         <div class="luxury-card" style="height: 100%;">
-            <span class="badge-category">Philosophy & Grandeur</span>
-            <h3 style="color: #8E1616; margin-top: 6px;">The Royal Vision</h3>
-            <p style="color: #374151; line-height: 1.7; font-size: 0.98rem;">
-                <strong>The Indus Retreat</strong> was envisioned as an architectural and cultural sanctuary, 
-                devoted to preserving and honoring the glorious heritage of Sindh. For centuries, the Indus Valley 
-                has stood as the cradle of refined arts, intricate craftsmanship, and legendary hospitality. 
-            </p>
-            <p style="color: #374151; line-height: 1.7; font-size: 0.98rem;">
-                Our ambition is to curate a harmonious blend where ancient Sindhi royal elegance meets 
-                flawless 5-star modern hospitality—ensuring every guest experiences the timeless nobility 
-                of Thar and the regal court traditions of the Amirs.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with col_loc:
-        river_img_path = resolve_asset_path("indus_river.jpg")
-        if river_img_path and os.path.exists(str(river_img_path)):
-            st.image(str(river_img_path), caption="The Whispering Waters of the Indus River, Hyderabad", use_container_width=True)
-
-        st.markdown("""
-        <div class="luxury-card">
-            <span class="badge-category">Geographical Marvel</span>
-            <h3 style="color: #8E1616; margin-top: 6px;">Breathtaking Riverfront Sanctuary</h3>
-            <p style="color: #374151; line-height: 1.7; font-size: 0.98rem;">
-                Nestled directly upon the serene, whispering banks of the majestic <strong>Indus River</strong> 
-                in historic Hyderabad, the resort offers panoramic vistas of glistening emerald and golden waters.
-            </p>
-            <p style="color: #374151; line-height: 1.7; font-size: 0.98rem;">
-                Guests awaken to the tranquil melody of gentle river ripples and witness mesmerizing fiery sunsets 
-                over the Indus horizon. The resort provides an enchanting escape from modern bustle, wrapped in 
-                the timeless spirit of nature and royalty.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    st.markdown("<div style='height: 15px;'></div>", unsafe_allow_html=True)
-
-    # Section 2: Local History & Cultural Heritage
-    col_hist, col_wind = st.columns([3, 2])
-    with col_hist:
-        tomb_img_path = resolve_asset_path("tomb.png") or resolve_asset_path("tomb.jpg")
-        if tomb_img_path and os.path.exists(str(tomb_img_path)):
-            st.image(str(tomb_img_path), caption="Historical Tombs of the Talpurs & Kalhoras", use_container_width=True)
-
-        st.markdown("""
-        <div class="luxury-card">
-            <span class="badge-category">Historical Splendor</span>
-            <h3 style="color: #8E1616; margin-top: 6px;">Echoes of Hyderabad & Pacco Qillo</h3>
-            <p style="color: #374151; line-height: 1.7; font-size: 0.98rem;">
-                Hyderabad, historically known as <em>Neroon Kot</em>, has long been the pulsating heart of Sindhi culture, 
-                poetry, and culinary prestige. Located just moments from the resort stands the formidable 
-                <strong>Pacco Qillo (The Fort of Hyderabad)</strong>, built in 1768 by Mian Ghulam Shah Kalhoro.
-            </p>
-            <p style="color: #374151; line-height: 1.7; font-size: 0.98rem;">
-                From the vibrant blue glaze of Hala tiles to hand-woven Ajrak patterns, every corridor of The Indus Retreat 
-                echoes the historic valor, Sufi serenity, and artistic mastery of the lower Indus civilization.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with col_wind:
-        navalrai_img_path = resolve_asset_path("navalrai.jpg")
-        if navalrai_img_path and os.path.exists(str(navalrai_img_path)):
-            st.image(str(navalrai_img_path), caption="Navalrai Clock Tower, Hyderabad", use_container_width=True)
-
-        st.markdown("""
-        <div class="luxury-card" style="text-align: center;">
-            <h4 style="color: #8E1616; margin-bottom: 8px;">The Breeze of Manghan</h4>
-            <p style="color: #4B5563; font-size: 0.92rem; line-height: 1.6;">
-                Hyderabad has been celebrated for centuries as the <em>City of Windcatchers (Manghan)</em>. 
-                Our open-air riverfront verandas and heritage courtyards capture the refreshing cool breezes 
-                wafting off the Indus, providing natural comfort and timeless serenity.
+            <span class="badge-category">The Whispering Waters of the Indus</span>
+            <h3 style="color: #8E1616; margin-top: 6px;">The Lifeline of Civilization</h3>
+            <p style="color: #374151; line-height: 1.8; font-size: 1rem;">
+                Nestled directly upon the serene banks of the majestic Indus River (Mehran), The Indus Retreat offers a window into history. The Indus is not merely a river; it is the soul of Sindh. Guests awaken to the tranquil melody of gentle ripples and mesmerising golden sunsets reflecting off the waters that have nurtured empires, poets, and mystics for thousands of years.
             </p>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("<hr/>", unsafe_allow_html=True)
 
-    # Section 3: Meet The Founder
+    # ---------------------------------------------------------
+    # Section 2: Cradle of the Indus Valley
+    # Layout 2: Text on Left, Image on Right (mohenjo.jpg)
+    # ---------------------------------------------------------
+    col1, col2 = st.columns([1, 1], gap="large")
+    with col1:
+        st.markdown("""
+        <div class="luxury-card" style="height: 100%;">
+            <span class="badge-category">Cradle of the Indus Valley</span>
+            <h3 style="color: #8E1616; margin-top: 6px;">The Legacy of Mohenjo-Daro</h3>
+            <p style="color: #374151; line-height: 1.8; font-size: 1rem;">
+                Inspired by the 5,000-year-old legacy of Mohenjo-Daro, our retreat embodies the advanced urban planning and peaceful prosperity of the ancient Indus civilization. The meticulous baked-brick architecture and grid-like precision of antiquity are seamlessly integrated into the structural philosophy of our modern sanctuary, bridging millennia of human ingenuity.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    with col2:
+        img_p2 = resolve_asset_path("mohenjo.jpg")
+        if img_p2 and os.path.exists(str(img_p2)):
+            st.image(str(img_p2), caption="The Ancient Citadel of Mohenjo-Daro", use_container_width=True)
+
+    st.markdown("<hr/>", unsafe_allow_html=True)
+
+    # ---------------------------------------------------------
+    # Section 3: Echoes of Neroon Kot
+    # Layout 1: Image on Left (qillo.jpg), Text on Right
+    # ---------------------------------------------------------
+    col1, col2 = st.columns([1, 1], gap="large")
+    with col1:
+        img_p3 = resolve_asset_path("qillo.jpg")
+        if img_p3 and os.path.exists(str(img_p3)):
+            st.image(str(img_p3), caption="Pacco Qillo — The Historic Fortress of Hyderabad", use_container_width=True)
+    with col2:
+        st.markdown("""
+        <div class="luxury-card" style="height: 100%;">
+            <span class="badge-category">Echoes of Neroon Kot</span>
+            <h3 style="color: #8E1616; margin-top: 6px;">The Fortress of Hyderabad</h3>
+            <p style="color: #374151; line-height: 1.8; font-size: 1rem;">
+                Hyderabad, historically known as <em>Neroon Kot</em>, has long been the pulsating heart of Sindhi culture and culinary prestige. Guarding the city's rich history is the formidable Pacco Qillo (The Fort of Hyderabad), established in 1768 by Mian Ghulam Shah Kalhoro. Our resort echoes the historic valor and regal court traditions of this grand era.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<hr/>", unsafe_allow_html=True)
+
+    # ---------------------------------------------------------
+    # Section 4: Splendor of the Amirs
+    # Layout 2: Text on Left, Image on Right (tomb.jpg)
+    # ---------------------------------------------------------
+    col1, col2 = st.columns([1, 1], gap="large")
+    with col1:
+        st.markdown("""
+        <div class="luxury-card" style="height: 100%;">
+            <span class="badge-category">Splendor of the Amirs</span>
+            <h3 style="color: #8E1616; margin-top: 6px;">Architectural Mastery</h3>
+            <p style="color: #374151; line-height: 1.8; font-size: 1rem;">
+                From the vibrant blue glaze of authentic Hala tiles to the geometric mastery of hand-woven Ajrak, our interiors pay homage to the magnificent tombs of the Kalhora and Talpur dynasties. Every corridor and courtyard is designed to reflect the Sufi serenity, intricate craftsmanship, and artistic brilliance of the lower Indus Valley.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    with col2:
+        img_p4 = resolve_asset_path("tomb.jpg")
+        if img_p4 and os.path.exists(str(img_p4)):
+            st.image(str(img_p4), caption="Architectural Splendor of the Historical Tombs", use_container_width=True)
+
+    st.markdown("<hr/>", unsafe_allow_html=True)
+
+    # ---------------------------------------------------------
+    # Section 5: The City of Windcatchers
+    # Layout 1: Image on Left (windcatcher.jpg), Text on Right
+    # ---------------------------------------------------------
+    col1, col2 = st.columns([1, 1], gap="large")
+    with col1:
+        img_p5 = resolve_asset_path("windcatcher.jpg")
+        if img_p5 and os.path.exists(str(img_p5)):
+            st.image(str(img_p5), caption="Windcatchers (Manghan) of Hyderabad", use_container_width=True)
+    with col2:
+        st.markdown("""
+        <div class="luxury-card" style="height: 100%;">
+            <span class="badge-category">The City of Windcatchers</span>
+            <h3 style="color: #8E1616; margin-top: 6px;">The Breeze of Manghan</h3>
+            <p style="color: #374151; line-height: 1.8; font-size: 1rem;">
+                For centuries, Hyderabad has been celebrated as the <em>City of Windcatchers (Manghan)</em>. The city’s ancient skyline was defined by these architectural marvels designed to capture the refreshing breezes wafting off the Indus River. Our open-air riverfront verandas harness this exact natural comfort, offering timeless serenity without reliance on modern machinery.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<hr/>", unsafe_allow_html=True)
+
+    # ---------------------------------------------------------
+    # Section 6: A Tapestry of Eras
+    # Layout 2: Text on Left, Image on Right (navalrai.jpg)
+    # ---------------------------------------------------------
+    col1, col2 = st.columns([1, 1], gap="large")
+    with col1:
+        st.markdown("""
+        <div class="luxury-card" style="height: 100%;">
+            <span class="badge-category">A Tapestry of Eras</span>
+            <h3 style="color: #8E1616; margin-top: 6px;">The Colonial & Cultural Crossroads</h3>
+            <p style="color: #374151; line-height: 1.8; font-size: 1rem;">
+                The iconic Navalrai Market Clock Tower stands as a testament to the city's overlapping eras of history, where colonial-era masonry met traditional Sindhi commerce. The Indus Retreat celebrates this rich tapestry, serving as a cultural crossroads where international luxury meets the authentic, warm hospitality that Sindh has offered travelers for centuries.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    with col2:
+        img_p6 = resolve_asset_path("navalrai.jpg")
+        if img_p6 and os.path.exists(str(img_p6)):
+            st.image(str(img_p6), caption="Navalrai Market Clock Tower, Hyderabad", use_container_width=True)
+
+    st.markdown("<hr/>", unsafe_allow_html=True)
+
+    # ---------------------------------------------------------
+    # Section 7: Visionary Leadership
+    # Layout: Centered text (No columns, no image)
+    # ---------------------------------------------------------
     st.markdown("""
-    <div class="luxury-card" style="border-left: 5px solid #8E1616; padding: 24px;">
+    <div class="luxury-card" style="border-left: 5px solid #8E1616; padding: 28px; text-align: center; max-width: 900px; margin: 0 auto;">
         <span class="badge-category">Visionary Leadership</span>
-        <h3 style="color: #8E1616; margin-top: 6px; font-size: 1.6rem;">Meet the Founder: Imtiyaz Soomro</h3>
-        <p style="color: #374151; line-height: 1.8; font-size: 1.02rem;">
-            <strong>Imtiyaz Soomro</strong> is the distinguished founder and guiding visionary behind The Indus Retreat. 
-            Born with deep ancestral roots in Sindh's rich cultural soil, Imtiyaz embarked on a mission to showcase 
-            the grandeur of indigenous heritage on the world stage.
+        <h2 style="color: #8E1616; margin-top: 8px; margin-bottom: 12px; border-bottom: none; text-align: center;">Meet the Founder: Imtiyaz Soomro</h2>
+        <p style="color: #374151; line-height: 1.9; font-size: 1.05rem; max-width: 780px; margin: 0 auto;">
+            Imtiyaz Soomro is the founder and developer of The Indus Retreat, conceptualizing this sanctuary to showcase the grandeur of indigenous Sindhi heritage on the world stage, blending modern technological precision with century-old culinary and royal hospitality traditions.
         </p>
-        <p style="color: #374151; line-height: 1.8; font-size: 1.02rem;">
-            Combining an unwavering reverence for historical traditions with an appetite for modern technological precision, 
-            he conceptualized The Indus Retreat as a haven where bespoke digital concierge amenities seamlessly coexist 
-            with century-old culinary recipes and regal courtesies. Under his leadership, the resort stands as a tribute 
-            to genuine warmth, cultural preservation, and uncompromising luxury.
-        </p>
-        <div style="display: flex; gap: 24px; margin-top: 14px; font-size: 0.9rem; color: #6B7280;">
+        <div style="display: flex; justify-content: center; gap: 24px; margin-top: 18px; font-size: 0.92rem; color: #6B7280;">
             <div>📍 <em>Hyderabad, Sindh</em></div>
-            <div>🏛️ <em>Heritage Preservation Society Patron</em></div>
+            <div>🏛️ <em>Heritage Preservation</em></div>
             <div>✨ <em>Hospitality Visionary</em></div>
         </div>
     </div>
