@@ -846,6 +846,61 @@ elif navigation == "Our Story & Location":
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown("<hr/>", unsafe_allow_html=True)
+
+    # ---------------------------------------------------------
+    # Section 8: The Culinary Masters
+    # ---------------------------------------------------------
+    st.markdown("### The Culinary Masters")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        img_sindhi = resolve_asset_path("chef_sindhi.jpg")
+        if img_sindhi and os.path.exists(str(img_sindhi)):
+            st.image(str(img_sindhi), use_container_width=True)
+        st.subheader("Ustad Fazal - Heritage Chef")
+        st.write(
+            "Ustad Fazal carries deep ancestral roots in Sindh, having spent decades mastering "
+            "the ancient clay ovens (tandoors) and indigenous spices of the Indus Valley. "
+            "His authentic culinary craft preserves centuries-old traditional recipes and royal flavors."
+        )
+
+    with col2:
+        img_dubai = resolve_asset_path("chef_dubai.jpg")
+        if img_dubai and os.path.exists(str(img_dubai)):
+            st.image(str(img_dubai), use_container_width=True)
+        st.subheader("Chef Tariq - Executive Chef")
+        st.write(
+            "Chef Tariq brings over 10 years of culinary leadership in luxury 5-star hotels in Dubai. "
+            "Renowned for precision and modern creativity, he infuses Michelin-star plating techniques "
+            "and international gourmet fusion into every Indus signature dish."
+        )
+
+    st.markdown("<hr/>", unsafe_allow_html=True)
+
+    # ---------------------------------------------------------
+    # Section 9: Culinary Artistry Video (The Art of Plating)
+    # ---------------------------------------------------------
+    st.markdown("### The Art of Plating")
+
+    # Safe video path resolver checking for local video files (plating.mp4 / plated.mp4)
+    video_path = None
+    for candidate_name in ["plated.mp4", "plating.mp4"]:
+        resolved = resolve_asset_path(candidate_name)
+        if resolved and os.path.exists(str(resolved)):
+            video_path = str(resolved)
+            break
+        direct_candidate = os.path.join("frontend", candidate_name)
+        if os.path.exists(direct_candidate):
+            video_path = direct_candidate
+            break
+
+    if video_path and os.path.exists(video_path):
+        st.video(video_path)
+    else:
+        st.video("https://www.youtube.com/watch?v=YOUR_PLACEHOLDER")
+
+
 # ---------------------------------------------------------
 # MODULE 5: CONTACT & CONCIERGE
 # ---------------------------------------------------------
